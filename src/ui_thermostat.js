@@ -554,7 +554,7 @@ module.exports = function (RED) {
                 svg
               )
               var lblDevice_text = document.createTextNode('')
-              lblAway.appendChild(lblDevice_text)
+              lblDevice.appendChild(lblDevice_text)
               //
               var icoLeaf = createSVGElement(
                 'path',
@@ -716,7 +716,7 @@ module.exports = function (RED) {
                * RENDER - device
                */
               function renderDevice() {
-                lblAmbient_text.nodeValue = self.device
+                lblDevice_text.nodeValue = self.device
               }
               
               /*
