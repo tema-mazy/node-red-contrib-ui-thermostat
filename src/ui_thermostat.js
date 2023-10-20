@@ -345,6 +345,7 @@ module.exports = function (RED) {
                 hvac_state: properties.hvac_states[0],
                 has_leaf: false,
                 away: false,
+                device : '',
               }
 
               /*
@@ -402,7 +403,15 @@ module.exports = function (RED) {
                   render()
                 },
               })
-
+             Object.defineProperty(this, 'device', {
+                get: function () {
+                  return state.device
+                },
+                set: function (val) {
+                  state.away = val
+                  render()
+                },
+              })
               /*
                * SVG
                */
@@ -522,7 +531,7 @@ module.exports = function (RED) {
                 },
                 svg
               )
-              var lblAway_text = document.createTextNode('AWAY')
+              var lblAway_text = document.createTextNode('STANDBY')
               lblAway.appendChild(lblAway_text)
               //
               var icoLeaf = createSVGElement(
@@ -895,6 +904,7 @@ module.exports = function (RED) {
                   hvac_state: $scope.nest.hvac_state,
                   has_leaf: $scope.nest.has_leaf,
                   away: $scope.nest.away,
+                  device: $scope.nest.device,
                 }
                 $scope.send({ topic: 'target_temperature', payload: p })
               },
@@ -916,6 +926,7 @@ module.exports = function (RED) {
                 $scope.nest.hvac_state = data.payload.hvac_state
                 $scope.nest.has_leaf = data.payload.has_leaf
                 $scope.nest.away = data.payload.away
+                $scope.nest.device = data.payload.device
               }
             },
             true
