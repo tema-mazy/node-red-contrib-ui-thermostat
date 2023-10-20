@@ -31,6 +31,11 @@ module.exports = function (RED) {
     .dial.away .dial__lbl--away {
         opacity: 1;
     }
+    .dial.away .dial__lbl--device {
+        font-size: 20px;
+        opacity: 1;
+    }
+    
     .dial .dial__shape {
         -webkit-transition: fill 0.5s;
         transition: fill 0.5s;
@@ -534,6 +539,23 @@ module.exports = function (RED) {
               var lblAway_text = document.createTextNode('STANDBY')
               lblAway.appendChild(lblAway_text)
               //
+             
+              /*
+               * DEVICE
+               *
+               */
+              var lblDevice = createSVGElement(
+                'text',
+                {
+                  x: properties.radius,
+                  y: properties.2*radius,
+                  class: 'dial__lbl dial__lbl--device',
+                },
+                svg
+              )
+              var lblDevice_text = document.createTextNode('')
+              lblAway.appendChild(lblDevice_text)
+              //
               var icoLeaf = createSVGElement(
                 'path',
                 {
@@ -541,7 +563,7 @@ module.exports = function (RED) {
                 },
                 svg
               )
-
+              
               /*
                * LEAF
                */
@@ -635,6 +657,7 @@ module.exports = function (RED) {
                 renderTargetTemperature()
                 renderAmbientTemperature()
                 renderLeaf()
+                renderDevice()
               }
               render()
 
@@ -689,6 +712,13 @@ module.exports = function (RED) {
                 })
               }
 
+              /*
+               * RENDER - device
+               */
+              function renderDevice() {
+                lblAmbient_text.nodeValue = self.device
+              }
+              
               /*
                * RENDER - ambient temperature
                */
