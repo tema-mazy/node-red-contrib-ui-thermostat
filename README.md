@@ -30,7 +30,8 @@ msg.payload = {
     "target_temperature": 23,
     "hvac_state": "heating",
     "has_leaf": false,
-    "away": false
+    "away": false,
+    "device": "Hall"
 };
 
 msg.topic = "update";
