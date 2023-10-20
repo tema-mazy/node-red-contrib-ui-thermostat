@@ -101,7 +101,7 @@ module.exports = function (RED) {
         font-weight: bold;
     }
     .dial__lbl--away {
-        font-size: 72px;
+        font-size: 36px;
         font-weight: bold;
         opacity: 0;
         pointer-events: none;
