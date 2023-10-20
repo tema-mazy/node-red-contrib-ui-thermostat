@@ -31,10 +31,6 @@ module.exports = function (RED) {
     .dial.away .dial__lbl--away {
         opacity: 1;
     }
-    .dial.away .dial__lbl--device {
-        font-size: 20px;
-        opacity: 1;
-    }
     
     .dial .dial__shape {
         -webkit-transition: fill 0.5s;
@@ -109,6 +105,13 @@ module.exports = function (RED) {
         font-size: 36px;
         font-weight: bold;
         opacity: 0;
+        pointer-events: none;
+    }
+    .dial__lbl--device {
+        font-size: 24x;
+        font-weight: bold;
+        opacity: 1;
+        color: #dedede;
         pointer-events: none;
     }
     #controls {
@@ -548,7 +551,7 @@ module.exports = function (RED) {
                 'text',
                 {
                   x: properties.radius,
-                  y: properties.2*radius,
+                  y: 1.2*properties.radius,
                   class: 'dial__lbl dial__lbl--device',
                 },
                 svg
