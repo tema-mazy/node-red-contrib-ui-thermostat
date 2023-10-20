@@ -408,7 +408,7 @@ module.exports = function (RED) {
                   return state.device
                 },
                 set: function (val) {
-                  state.away = val
+                  state.device = val
                   render()
                 },
               })
@@ -921,8 +921,7 @@ module.exports = function (RED) {
             function (data) {
               if (data?.topic !== undefined && data.topic === 'update') {
                 $scope.nest.target_temperature = data.payload.target_temperature
-                $scope.nest.ambient_temperature =
-                  data.payload.ambient_temperature
+                $scope.nest.ambient_temperature = data.payload.ambient_temperature
                 $scope.nest.hvac_state = data.payload.hvac_state
                 $scope.nest.has_leaf = data.payload.has_leaf
                 $scope.nest.away = data.payload.away
