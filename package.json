@@ -1,10 +1,10 @@
 {
   "name": "node-red-contrib-ui-thermostat",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "thermostat widget",
   "contributors": [
     {
-      "name": "Alex Arnau"
+      "name": "Tema Mazy"
     },
     {
       "name": "automatikas"
@@ -13,7 +13,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aarnau/node-red-contrib-ui-thermostat.git"
+    "url": "https://github.com/tema-mazy/node-red-contrib-ui-thermostat.git"
   },
   "node-red": {
     "nodes": {
